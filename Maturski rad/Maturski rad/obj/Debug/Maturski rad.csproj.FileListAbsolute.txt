@@ -1,0 +1,14 @@
+C:\Users\rales\source\repos\Maturski rad\Maturski rad\obj\Debug\Maturski rad.csprojAssemblyReference.cache
+C:\Users\rales\source\repos\Maturski rad\Maturski rad\obj\Debug\Maturski_rad.Form1.resources
+C:\Users\rales\source\repos\Maturski rad\Maturski rad\obj\Debug\Maturski_rad.Properties.Resources.resources
+C:\Users\rales\source\repos\Maturski rad\Maturski rad\obj\Debug\Maturski rad.csproj.GenerateResource.cache
+C:\Users\rales\source\repos\Maturski rad\Maturski rad\obj\Debug\Maturski rad.csproj.CoreCompileInputs.cache
+C:\Users\rales\source\repos\Maturski rad\Maturski rad\bin\Debug\Maturski rad.exe.config
+C:\Users\rales\source\repos\Maturski rad\Maturski rad\bin\Debug\Maturski rad.exe
+C:\Users\rales\source\repos\Maturski rad\Maturski rad\bin\Debug\Maturski rad.pdb
+C:\Users\rales\source\repos\Maturski rad\Maturski rad\obj\Debug\Maturski rad.exe
+C:\Users\rales\source\repos\Maturski rad\Maturski rad\obj\Debug\Maturski rad.pdb
+C:\Users\rales\source\repos\Maturski rad\Maturski rad\obj\Debug\Maturski_rad.Form2.resources
+C:\Users\rales\source\repos\Maturski rad\Maturski rad\obj\Debug\Maturski_rad.Form3.resources
+C:\Users\rales\source\repos\Maturski rad\Maturski rad\obj\Debug\Maturski_rad.Form4.resources
+C:\Users\rales\source\repos\Maturski rad\Maturski rad\obj\Debug\Maturski_rad.Form5.resources
