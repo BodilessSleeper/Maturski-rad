@@ -45,32 +45,39 @@ namespace Maturski_rad
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (new FileInfo("Baza.accdb").LastWriteTime.Day != DateTime.Now.Day)
+            FileInfo x = new FileInfo("Baza.accdb");
+            if (x.LastWriteTime.Date != DateTime.Now)
             {
+                
                 OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Baza.accdb");
                 con.Open();
-                OleDbCommand com = new OleDbCommand("DROP TABLE [Dan]", con);
-                com.ExecuteNonQuery();
-                com = new OleDbCommand("CREATE TABLE [Dan]([Predmet] Text, [Kolicina] Float, [Opstina] Text)", con);
-                com.ExecuteNonQuery();
-                com = new OleDbCommand("INSERT INTO [Dan] SELECT * FROM [Dan1]", con);
-                com.ExecuteNonQuery();
-                com = new OleDbCommand("DROP TABLE [Dan1]", con);
-                com.ExecuteNonQuery();
-                com = new OleDbCommand("CREATE TABLE [Dan1]([Predmet] Text, [Kolicina] Float, [Opstina] Text)", con);
-                com.ExecuteNonQuery();
-                if(new FileInfo("Baza.accdb").LastWriteTime.Month != DateTime.Now.Month)
+                OleDbCommand com = new OleDbCommand();
+                DateTime lwt = x.LastWriteTime;
+                MessageBox.Show(lwt.ToString("yyyy MM"));
+                if (x.LastWriteTime.Month != DateTime.Now.Month)
                 {
-                    com = new OleDbCommand("CREATE TABLE [" + new FileInfo("Baza.accdb").LastWriteTime.ToString("yyyy MM") + "]([Predmet] Text, [Kolicina] Float, [Opstina] Text)", con);
+                    com = new OleDbCommand("CREATE TABLE [" + lwt.ToString("yyyy MM") + "]([Predmet] Text, [Kolicina] Float, [Opstina] Text)", con);
                     com.ExecuteNonQuery();
-                    com = new OleDbCommand("INSERT INTO [" + new FileInfo("Baza.accdb").LastWriteTime.ToString("yyyy MM") + "] SELECT * FROM [Mesec]", con);
+                    com = new OleDbCommand("INSERT INTO [" + lwt.ToString("yyyy MM") + "] SELECT * FROM [Mesec]", con);
                     com.ExecuteNonQuery();
                     com = new OleDbCommand("DROP TABLE [Mesec]", con);
                     com.ExecuteNonQuery();
                     com = new OleDbCommand("CREATE TABLE [Mesec]([Predmet] Text, [Kolicina] Float, [Opstina] Text)", con);
                     com.ExecuteNonQuery();
                 }
+                MessageBox.Show("MJAU");
+                com = new OleDbCommand("DROP TABLE [Dan]", con);
+                com.ExecuteNonQuery();
+                com = new OleDbCommand("CREATE TABLE [Dan]([Predmet] Text, [Kolicina] Float, [Opstina] Text)", con);
+                com.ExecuteNonQuery();
+                com = new OleDbCommand("INSERT INTO [Dan] SELECT * FROM [Dan1]", con);
+                com.ExecuteNonQuery();
+                com = new OleDbCommand("DROP TABLE [Kamioni]", con);
+                com.ExecuteNonQuery();
+                com = new OleDbCommand("CREATE TABLE [Kamioni]([Text] Text)", con);
+                com.ExecuteNonQuery();
             }
+            else MessageBox.Show(DateTime.Now.Day.ToString());
         }
     }
 }

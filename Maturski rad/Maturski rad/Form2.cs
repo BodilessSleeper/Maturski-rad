@@ -28,7 +28,7 @@ namespace Maturski_rad
             ad.SelectCommand = com;
             DataTable dt = new DataTable();
             ad.Fill(dt);
-            MessageBox.Show(dt.Rows[0][0].ToString());
+            //MessageBox.Show(dt.Rows[0][0].ToString());
             foreach(DataRow x in dt.Rows)
             {
                 com = new OleDbCommand("SELECT [Kolicina] FROM [Dan1] WHERE [Opstina]='" + x[0].ToString() + "'", con);
