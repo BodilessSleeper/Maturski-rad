@@ -53,7 +53,6 @@ namespace Maturski_rad
                 con.Open();
                 OleDbCommand com = new OleDbCommand();
                 DateTime lwt = x.LastWriteTime;
-                MessageBox.Show(lwt.ToString("yyyy MM"));
                 if (x.LastWriteTime.Month != DateTime.Now.Month)
                 {
                     com = new OleDbCommand("CREATE TABLE [" + lwt.ToString("yyyy MM") + "]([Predmet] Text, [Kolicina] Float, [Opstina] Text)", con);
@@ -65,7 +64,6 @@ namespace Maturski_rad
                     com = new OleDbCommand("CREATE TABLE [Mesec]([Predmet] Text, [Kolicina] Float, [Opstina] Text)", con);
                     com.ExecuteNonQuery();
                 }
-                MessageBox.Show("MJAU");
                 com = new OleDbCommand("DROP TABLE [Dan]", con);
                 com.ExecuteNonQuery();
                 com = new OleDbCommand("CREATE TABLE [Dan]([Predmet] Text, [Kolicina] Float, [Opstina] Text)", con);
@@ -77,7 +75,6 @@ namespace Maturski_rad
                 com = new OleDbCommand("CREATE TABLE [Kamioni]([Text] Text)", con);
                 com.ExecuteNonQuery();
             }
-            else MessageBox.Show(DateTime.Now.Day.ToString());
         }
     }
 }
